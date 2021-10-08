@@ -49,12 +49,12 @@ public class Sistema {
 
     //cadastrar vendas
     public static Venda cadastrarVenda() throws Exception{
+        String cpf = capturarDados("Informe o cpf do cliente que deseja pesquisar a compra:").nextLine();
+        String email = capturarDados("Informe o email do vendedor que deseja pesquisar a venda:").nextLine();
         double valorDaVenda = capturarDados("Por favor, informe o valor da compra: ").nextDouble();
         String dataDeRegistro = capturarDados("Informe a data da compra: ").nextLine();
-        Cliente cliente = cadastrarCliente();
-        Vendedor vendedor = cadastrarVendedor();
 
-        return ServicoVenda.cadastrarVenda(cliente, vendedor, valorDaVenda, dataDeRegistro);
+        return ServicoVenda.cadastrarVenda(cpf, email, valorDaVenda, dataDeRegistro);
     }
     public static void Executar() throws Exception{
         boolean menu = true;
