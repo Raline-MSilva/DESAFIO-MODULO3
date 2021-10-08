@@ -4,7 +4,7 @@ public class Main {
 
     public static void main(String[] args) {
         try {
-            Sistema.Executar();
+            //Sistema.Executar();
 
 
         }catch (Exception deuErro){

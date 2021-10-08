@@ -56,5 +56,31 @@ public class Sistema {
 
         return ServicoVenda.cadastrarVenda(cliente, vendedor, valorDaVenda, dataDeRegistro);
     }
+    public static void Executar() throws Exception{
+        boolean menu = true;
+
+        while (menu){
+            menu();
+
+            int opcaoDesejada = capturarDados("Informe a opção desejada: ").nextInt();
+
+            if (opcaoDesejada == 1){
+                cadastrarCliente();
+            } else if (opcaoDesejada == 2){
+                cadastrarVendedor();
+            } else if (opcaoDesejada == 3){
+                cadastrarVenda();
+            } else if (opcaoDesejada == 4){
+                ServicoCliente.listarClientes();
+            } else if (opcaoDesejada == 5){
+                ServicoVendedor.listarVendedor();
+            } else if (opcaoDesejada == 6){
+                ServicoVenda.listarVenda();
+            } else {
+                menu = false;
+                System.out.println("Cê saiu do sistema --Vendas Você em Divída--");
+            }
+        }
+    }
 
 }
