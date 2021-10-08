@@ -9,4 +9,13 @@ public class Sistema {
         System.out.println(mensagem);
         return capturarDados;
     }
+
+    //cadastrar cliente
+    public static Cliente cadastrarCliente() {
+        String nome = capturarDados("Por favor, informe o nome do Cliente: ").nextLine();
+        String cpf = capturarDados("Informe o CPF do cliente: ").nextLine();
+        String email = capturarDados("Por fim, informe o email do cliente: ").nextLine();
+
+        return ServicoCliente.cadastrarCliente(nome, cpf, email);
+    }
 }
