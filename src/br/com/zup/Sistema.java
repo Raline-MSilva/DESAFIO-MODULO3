@@ -17,6 +17,7 @@ public class Sistema {
         String email = capturarDados("Por fim, informe o email do cliente: ").nextLine();
         ServicoCliente.autenticarEmail(email);
         ServicoCliente.verificarCpf(cpf);
+        ServicoCliente.verificarEmailExistente(email);
 
         return ServicoCliente.cadastrarCliente(nome, cpf, email);
     }

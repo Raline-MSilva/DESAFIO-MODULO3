@@ -4,8 +4,8 @@ public class Main {
 
     public static void main(String[] args) {
         try {
-            Sistema.cadastrarVendedor();
-            Sistema.cadastrarVendedor();
+            Sistema.cadastrarCliente();
+            Sistema.cadastrarCliente();
 
 
         }catch (Exception deuErro){

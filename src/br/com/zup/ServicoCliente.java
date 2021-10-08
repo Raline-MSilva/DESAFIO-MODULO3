@@ -29,9 +29,18 @@ public class ServicoCliente {
 
     //não permitir cadastro com cpf repetido
     public static void verificarCpf(String cpf) throws Exception {
-        for (Cliente clienteReferencia : clientes){
-            if (clienteReferencia.getCpf().equals(cpf)){
+        for (Cliente clienteReferencia : clientes) {
+            if (clienteReferencia.getCpf().equals(cpf)) {
                 throw new Exception("CPF já existe em nosso sistema!");
+            }
+        }
+    }
+
+    //percorre a lista para não cadastrar email repetido
+    public static void verificarEmailExistente(String email) throws Exception {
+        for (Cliente clienteReferencia : clientes) {
+            if (clienteReferencia.getEmail().equals(email)) {
+                throw new Exception("Email já cadastrado no sistema!");
             }
         }
     }
