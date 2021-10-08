@@ -27,5 +27,12 @@ public class ServicoCliente {
         }
     }
 
-
+    //não permitir cadastro com cpf repetido
+    public static void verificarCpf(String cpf) throws Exception {
+        for (Cliente clienteReferencia : clientes){
+            if (clienteReferencia.getCpf().equals(cpf)){
+                throw new Exception("CPF já existe em nosso sistema!");
+            }
+        }
+    }
 }
