@@ -36,4 +36,12 @@ public class ServicoVendedor {
             }
         }
     }
+    //percorre a lista para não cadastrar email repetidos
+    public static void verificarEmailExistente (String email) throws Exception {
+        for (Vendedor vendedorReferencia : vendedores){
+            if (vendedorReferencia.getEmail().equals(email)){
+                throw new Exception("Email já cadastrado no sistema!");
+            }
+        }
+    }
 }

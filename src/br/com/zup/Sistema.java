@@ -29,6 +29,7 @@ public class Sistema {
         String email = capturarDados("Por fim, informe o email do vendedor: ").nextLine();
         ServicoVendedor.autenticarEmail(email);
         ServicoVendedor.verificarCpfRepetido(cpf);
+        ServicoVendedor.verificarEmailExistente(email);
 
         return ServicoVendedor.cadastrarVendedor(nome, cpf, email);
     }
