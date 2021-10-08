@@ -27,4 +27,13 @@ public class ServicoVendedor {
             throw new Exception("Email inválido, favor digitar um válido!");
         }
     }
+
+    //não permitir cadastro com cpf repetido
+    public static void verificarCpfRepetido(String cpf) throws Exception {
+        for (Vendedor vendedorReferencia : vendedores){
+            if (vendedorReferencia.getCpf().equals(cpf)){
+                throw new Exception("CPF já existe em nosso sistema!");
+            }
+        }
+    }
 }
