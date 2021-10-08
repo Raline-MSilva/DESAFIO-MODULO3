@@ -19,4 +19,17 @@ public class ServicoVenda {
             System.out.println(vendaReferencia);
         }
     }
+    //pesquisar todas as compras do cliente por cpf
+    public static void pesquisarCompraPorCpf(String cpf) throws Exception {
+        List<Venda> vendas = new ArrayList<>();
+        for (Venda clienteCompra : vendas) {
+            if (clienteCompra.getCliente().getCpf().equals(cpf)) {
+                vendas.add(clienteCompra);
+                System.out.println(clienteCompra);
+            }
+        }
+        if (vendas.size() == 0){
+            throw new Exception("Sem compras neste CPF");
+        }
+    }
 }
