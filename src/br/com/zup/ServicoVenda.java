@@ -32,4 +32,18 @@ public class ServicoVenda {
             throw new Exception("Sem compras neste CPF");
         }
     }
+
+    //pesquisar as vendas do vendedor pelo seu email
+    public static void pesquisarVendaPorEmail (String email) throws Exception {
+        List<Venda> vendas = new ArrayList<>();
+        for (Venda vendedor : vendas) {
+            if (vendedor.getVendedorResponsavel().getEmail().equals(email)) {
+                vendas.add(vendedor);
+                System.out.println(vendedor);
+            }
+        }
+        if (vendas.size() == 0){
+            throw new Exception("Sem vendas neste email");
+        }
+    }
 }
