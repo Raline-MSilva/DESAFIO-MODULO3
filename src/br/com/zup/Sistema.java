@@ -11,10 +11,11 @@ public class Sistema {
     }
 
     //cadastrar cliente
-    public static Cliente cadastrarCliente() {
+    public static Cliente cadastrarCliente() throws Exception{
         String nome = capturarDados("Por favor, informe o nome do Cliente: ").nextLine();
         String cpf = capturarDados("Informe o CPF do cliente: ").nextLine();
         String email = capturarDados("Por fim, informe o email do cliente: ").nextLine();
+        ServicoCliente.autenticarEmail(email);
 
         return ServicoCliente.cadastrarCliente(nome, cpf, email);
     }
@@ -29,7 +30,7 @@ public class Sistema {
     }
 
     //cadastrar vendas
-    public static Venda cadastrarVenda() {
+    public static Venda cadastrarVenda() throws Exception{
         double valorDaVenda = capturarDados("Por favor, informe o valor da compra: ").nextDouble();
         String dataDeRegistro = capturarDados("Informe a data da compra: ").nextLine();
         Cliente cliente = cadastrarCliente();
