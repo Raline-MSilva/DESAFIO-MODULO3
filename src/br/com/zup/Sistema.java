@@ -21,10 +21,11 @@ public class Sistema {
     }
 
     //cadastrar vendedor
-    public static Vendedor cadastrarVendedor() {
+    public static Vendedor cadastrarVendedor() throws Exception{
         String nome = capturarDados("Por favor,informe o nome do vendedor: ").nextLine();
         String cpf = capturarDados("Informe o CPF do vendedor: ").nextLine();
         String email = capturarDados("Por fim, informe o email do vendedor: ").nextLine();
+        ServicoVendedor.autenticarEmail(email);
 
         return ServicoVendedor.cadastrarVendedor(nome, cpf, email);
     }
