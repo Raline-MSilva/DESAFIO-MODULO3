@@ -20,11 +20,21 @@ public class Sistema {
     }
 
     //cadastrar vendedor
-    public static Vendedor cadastrarVendedor(){
+    public static Vendedor cadastrarVendedor() {
         String nome = capturarDados("Por favor,informe o nome do vendedor: ").nextLine();
         String cpf = capturarDados("Informe o CPF do vendedor: ").nextLine();
         String email = capturarDados("Por fim, informe o email do vendedor: ").nextLine();
 
-        return ServicoVendedor.cadastrarVendedor(nome,cpf,email);
+        return ServicoVendedor.cadastrarVendedor(nome, cpf, email);
+    }
+
+    //cadastrar vendas
+    public static Venda cadastrarVendas() {
+        double valorDaVenda = capturarDados("Por favor, informe o valor da compra: ").nextDouble();
+        String dataDeRegistro = capturarDados("Informe a data da compra: ").nextLine();
+        Cliente cliente = cadastrarCliente();
+        Vendedor vendedor = cadastrarVendedor();
+
+        return ServicoVenda.cadastrarVenda(cliente, vendedor, valorDaVenda, dataDeRegistro);
     }
 }
