@@ -25,8 +25,5 @@ public class Main {
         System.out.println("--------------------------------------------------------------------------");
 
          */
-
-        Sistema.cadastrarVenda();
-        ServicoVenda.listarVenda();
     }
 }

@@ -19,4 +19,13 @@ public class ServicoCliente {
             System.out.println(clienteReferencia);
         }
     }
+
+    //não permite cadastrar email sem @
+    public static void autenticarEmail(String email) throws Exception {
+        if (!email.contains("@")) {
+            throw new Exception("Email inválido, favor digitar um válido!");
+        }
+    }
+
+
 }
