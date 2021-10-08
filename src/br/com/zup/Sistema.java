@@ -27,6 +27,7 @@ public class Sistema {
         String cpf = capturarDados("Informe o CPF do vendedor: ").nextLine();
         String email = capturarDados("Por fim, informe o email do vendedor: ").nextLine();
         ServicoVendedor.autenticarEmail(email);
+        ServicoVendedor.verificarCpfRepetido(cpf);
 
         return ServicoVendedor.cadastrarVendedor(nome, cpf, email);
     }
