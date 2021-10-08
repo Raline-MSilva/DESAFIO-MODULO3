@@ -11,4 +11,12 @@ public class ServicoVenda {
         vendas.add(venda);
         return venda;
     }
+
+    //percorrendo lista para exibir
+    public static void listarVenda(){
+        System.out.println("Quantidade de vendas: " + vendas.size());
+        for (Venda vendaReferencia: vendas){
+            System.out.println(vendaReferencia);
+        }
+    }
 }

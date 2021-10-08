@@ -12,7 +12,7 @@ public class Main {
         ServicoVendedor.listarVendedor();
 
          */
-        System.out.println("========================");
+        /*System.out.println("========================");
         Cliente cliente1 = new Cliente("Raline", "123456", "raline@raline");
         Cliente cliente2 = new Cliente("Maria", "98745", "maria@maria");
         Vendedor vendedor1 = new Vendedor("Ana", "147852", "ana@ana");
@@ -23,5 +23,10 @@ public class Main {
         Venda venda2 = new Venda(cliente2, vendedor2, 50, "05/14/98");
         System.out.println(venda2.toString());
         System.out.println("--------------------------------------------------------------------------");
+
+         */
+
+        Sistema.cadastrarVenda();
+        ServicoVenda.listarVenda();
     }
 }

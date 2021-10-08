@@ -29,7 +29,7 @@ public class Sistema {
     }
 
     //cadastrar vendas
-    public static Venda cadastrarVendas() {
+    public static Venda cadastrarVenda() {
         double valorDaVenda = capturarDados("Por favor, informe o valor da compra: ").nextDouble();
         String dataDeRegistro = capturarDados("Informe a data da compra: ").nextLine();
         Cliente cliente = cadastrarCliente();
