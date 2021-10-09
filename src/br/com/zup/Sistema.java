@@ -1,5 +1,6 @@
 package br.com.zup;
 
+import java.util.List;
 import java.util.Scanner;
 
 public class Sistema {
@@ -51,12 +52,18 @@ public class Sistema {
 
     //cadastrar vendas
     public static Venda cadastrarVenda() throws Exception{
-        String cpf = capturarDados("Informe o cpf do cliente que deseja pesquisar a compra:").nextLine();
-        String email = capturarDados("Informe o email do vendedor que deseja pesquisar a venda:").nextLine();
+        String cpf = capturarDados("Informe o cpf do cliente que deseja cadastrar a compra:").nextLine();
+        String email = capturarDados("Informe o email do vendedor que deseja realizar a venda:").nextLine();
         double valorDaVenda = capturarDados("Por favor, informe o valor da compra: ").nextDouble();
         String dataDeRegistro = capturarDados("Informe a data da compra: ").nextLine();
 
         return ServicoVenda.cadastrarVenda(cpf, email, valorDaVenda, dataDeRegistro);
+    }
+    public static List<Venda> pesquisarCompraPorCpf () throws Exception {
+        String cpf = capturarDados("Digite o CPF do cliente que deseja consultar:").nextLine();
+        List<Venda> compraPorCpf = ServicoVenda.pesquisarCompraPorCpf(cpf){
+            return compraPorCpf;
+        }
     }
 
     public static void Executar() throws Exception{
@@ -79,11 +86,10 @@ public class Sistema {
                 ServicoVendedor.listarVendedor();
             } else if (opcaoDesejada == 6) {
                 ServicoVenda.listarVenda();
-            /*} else if (opcaoDesejada == 7){
+            } else if (opcaoDesejada == 7){
                 ServicoVenda.pesquisarCompraPorCpf();
             } else if (opcaoDesejada == 8){
                 ServicoVenda.pesquisarVendaPorEmail();
-             */
             }else {
                 menu = false;
                 System.out.println("Cê saiu do sistema --Vendas Você em Divída--");
