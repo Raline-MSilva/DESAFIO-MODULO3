@@ -44,4 +44,13 @@ public class ServicoVendedor {
             }
         }
     }
+    //percorre a lista para cadastrar vendedor na venda
+    public static Vendedor pesquisarVendedorPorEmail (String email) throws Exception{
+        for (Vendedor vendedorReferencia : vendedores){
+            if (vendedorReferencia.getEmail().equals(email)){
+                return vendedorReferencia;
+            }
+        }
+        throw new Exception("E-mail não encontrado!");
+    }
 }
