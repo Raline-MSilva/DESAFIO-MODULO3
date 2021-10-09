@@ -25,20 +25,17 @@ public class ServicoVenda {
     }
 
     //pesquisar todas as compras do cliente por cpf
-    public static void pesquisarCompraPorCpf(String cpf) throws Exception {
-        List<Venda> vendas = new ArrayList<>();
+    public static List<Venda> pesquisarCompraPorCpf(String cpf) throws Exception {
+        List<Venda> listaDeCompra = new ArrayList<>();
         for (Venda clienteCompra : vendas) {
             if (clienteCompra.getCliente().getCpf().equals(cpf)) {
-                vendas.add(clienteCompra);
-                System.out.println(clienteCompra);
+                listaDeCompra.add(clienteCompra);
             }
         }
-        if (vendas.size() == 0) {
-            throw new Exception("Sem compras neste CPF");
-        }
+        return listaDeCompra;
     }
 
-    //pesquisar as vendas do vendedor pelo seu email
+    /*//pesquisar as vendas do vendedor pelo seu email
     public static void pesquisarVendaPorEmail(String email) throws Exception {
         List<Venda> vendas = new ArrayList<>();
         for (Venda vendedor : vendas) {
@@ -46,9 +43,10 @@ public class ServicoVenda {
                 vendas.add(vendedor);
                 System.out.println(vendedor);
             }
-        }
-        if (vendas.size() == 0) {
             throw new Exception("Sem vendas neste email");
         }
+
     }
+
+     */
 }

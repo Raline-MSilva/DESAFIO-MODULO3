@@ -61,16 +61,17 @@ public class Sistema {
     }
     public static List<Venda> pesquisarCompraPorCpf () throws Exception {
         String cpf = capturarDados("Digite o CPF do cliente que deseja consultar:").nextLine();
-        List<Venda> compraPorCpf = ServicoVenda.pesquisarCompraPorCpf(cpf){
+        List<Venda> compraPorCpf = ServicoVenda.pesquisarCompraPorCpf(cpf);
             return compraPorCpf;
         }
-    }
-    public static List<Venda> pesquisarVendaPoEmail() throws Exception {
+   /*public static List<Venda> pesquisarVendaPoEmail() throws Exception {
         String email = capturarDados("Informe o email do vendedor que deseja consultar: ").nextLine();
         List<Venda> vendaPorEmail = ServicoVenda.pesquisarVendaPorEmail(email){
             return vendaPorEmail;
         }
     }
+
+    */
 
     public static void Executar() throws Exception{
         boolean menu = true;
@@ -93,9 +94,10 @@ public class Sistema {
             } else if (opcaoDesejada == 6) {
                 ServicoVenda.listarVenda();
             } else if (opcaoDesejada == 7){
-                ServicoVenda.pesquisarCompraPorCpf();
-            } else if (opcaoDesejada == 8){
-                ServicoVenda.pesquisarVendaPorEmail();
+                System.out.println(pesquisarCompraPorCpf());
+            }
+            else if (opcaoDesejada == 8){
+                //ServicoVenda.pesquisarVendaPorEmail();
             }else {
                 menu = false;
                 System.out.println("Cê saiu do sistema --Vendas Você em Divída--");
