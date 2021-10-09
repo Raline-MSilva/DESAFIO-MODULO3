@@ -72,7 +72,7 @@ public class Sistema {
         return vendaPorEmail;
     }
 
-    public static void Executar() throws Exception {
+    public static boolean Executar() throws Exception {
         boolean menu = true;
 
         while (menu) {
@@ -101,6 +101,8 @@ public class Sistema {
                 System.out.println("Cê saiu do sistema --Vendas Você em Divída--");
             }
         }
+        return menu;
     }
+
 
 }
