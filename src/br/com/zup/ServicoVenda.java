@@ -6,13 +6,15 @@ import java.util.List;
 public class ServicoVenda {
     private static List<Venda> vendas = new ArrayList<>();
 
-    public static Venda cadastrarVenda(String cpf, String email, double valorDaVenda, String dataDeRegistro) throws Exception{
-        Cliente cliente = ServicoVenda.pesquisarCompraPorCpf(cpf);
-        Vendedor vendedor = ServicoVenda.pesquisarVendaPorEmail(email);
+
+    public static Venda cadastrarVenda(String cpf, String email, double valorDaVenda, String dataDeRegistro) throws Exception {
+        Cliente cliente = ServicoCliente.pesquisarClientePorCpf(cpf);
+        Vendedor vendedor = ServicoVendedor.pesquisarVendedorPorEmail(email);
         Venda venda = new Venda(cliente, vendedor, valorDaVenda, dataDeRegistro);
         vendas.add(venda);
         return venda;
     }
+
 
     //percorrendo lista para exibir
     public static void listarVenda() {
@@ -21,6 +23,7 @@ public class ServicoVenda {
             System.out.println(vendaReferencia);
         }
     }
+
     //pesquisar todas as compras do cliente por cpf
     public static void pesquisarCompraPorCpf(String cpf) throws Exception {
         List<Venda> vendas = new ArrayList<>();
@@ -36,7 +39,7 @@ public class ServicoVenda {
     }
 
     //pesquisar as vendas do vendedor pelo seu email
-    public static void pesquisarVendaPorEmail (String email) throws Exception {
+    public static void pesquisarVendaPorEmail(String email) throws Exception {
         List<Venda> vendas = new ArrayList<>();
         for (Venda vendedor : vendas) {
             if (vendedor.getVendedorResponsavel().getEmail().equals(email)) {
@@ -44,7 +47,7 @@ public class ServicoVenda {
                 System.out.println(vendedor);
             }
         }
-        if (vendas.size() == 0){
+        if (vendas.size() == 0) {
             throw new Exception("Sem vendas neste email");
         }
     }
