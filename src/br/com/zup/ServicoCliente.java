@@ -44,4 +44,13 @@ public class ServicoCliente {
             }
         }
     }
+    //percorre a lista para cadastrar na venda
+    public static Cliente pesquisarClientePorCpf(String cpf) throws Exception{
+        for (Cliente clienteReferencia : clientes){
+            if (clienteReferencia.getCpf().equalsIgnoreCase(cpf)){
+                return clienteReferencia;
+            }
+        }
+        throw new Exception("CPF não encontrado!");
+    }
 }
