@@ -35,18 +35,14 @@ public class ServicoVenda {
         return listaDeCompra;
     }
 
-    /*//pesquisar as vendas do vendedor pelo seu email
-    public static void pesquisarVendaPorEmail(String email) throws Exception {
-        List<Venda> vendas = new ArrayList<>();
+    //pesquisar as vendas do vendedor pelo seu email
+    public static List<Venda> pesquisarVendaPorEmail(String email) throws Exception {
+        List<Venda> listaDevenda = new ArrayList<>();
         for (Venda vendedor : vendas) {
             if (vendedor.getVendedorResponsavel().getEmail().equals(email)) {
-                vendas.add(vendedor);
-                System.out.println(vendedor);
+                listaDevenda.add(vendedor);
             }
-            throw new Exception("Sem vendas neste email");
         }
-
+        return listaDevenda;
     }
-
-     */
 }
