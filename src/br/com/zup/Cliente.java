@@ -14,6 +14,7 @@ public class Cliente extends Pessoa{
         StringBuilder retorno = new StringBuilder();
         retorno.append("\t");
         retorno.append(super.toString());
+        retorno.append("\n---------------------------------");
         return retorno.toString();
     }
 }

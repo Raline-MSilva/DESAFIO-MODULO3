@@ -30,11 +30,12 @@ public class Sistema {
     public static Cliente cadastrarCliente() throws Exception {
         String nome = capturarDados("Por favor, informe o nome do Cliente: ").nextLine();
         String cpf = capturarDados("Informe o CPF do cliente: ").nextLine();
+        ServicoCliente.verificarCpf(cpf);
         String email = capturarDados("Por fim, informe o email do cliente: ").nextLine();
         ServicoCliente.autenticarEmail(email);
-        ServicoCliente.verificarCpf(cpf);
-
-
+        ServicoCliente.verificarEmailExistente(email);
+        System.out.println(" ~~Cliente cadastrado com sucesso!~~");
+        System.out.println("==================================");
         return ServicoCliente.cadastrarCliente(nome, cpf, email);
     }
 
@@ -42,10 +43,12 @@ public class Sistema {
     public static Vendedor cadastrarVendedor() throws Exception {
         String nome = capturarDados("Por favor,informe o nome do vendedor: ").nextLine();
         String cpf = capturarDados("Informe o CPF do vendedor: ").nextLine();
+        ServicoVendedor.verificarCpfRepetido(cpf);
         String email = capturarDados("Por fim, informe o email do vendedor: ").nextLine();
         ServicoVendedor.autenticarEmail(email);
-        ServicoVendedor.verificarCpfRepetido(cpf);
         ServicoVendedor.verificarEmailExistente(email);
+        System.out.println(" ~~Vendedor cadastrado com sucesso!~~");
+        System.out.println("==================================");
 
         return ServicoVendedor.cadastrarVendedor(nome, cpf, email);
     }
@@ -56,6 +59,8 @@ public class Sistema {
         String email = capturarDados("Informe o email do vendedor que deseja realizar a venda:").nextLine();
         double valorDaVenda = capturarDados("Por favor, informe o valor da compra: ").nextDouble();
         String dataDeRegistro = capturarDados("Informe a data da compra: ").nextLine();
+        System.out.println(" ~~Venda cadastrada com sucesso!~~");
+        System.out.println("==================================");
 
         return ServicoVenda.cadastrarVenda(cpf, email, valorDaVenda, dataDeRegistro);
     }

@@ -54,9 +54,12 @@ public class Venda {
         StringBuilder retorno = new StringBuilder();
         retorno.append("***Extrato da Venda****");
         retorno.append("\n Cliente: " + getCliente());
+        retorno.append("\n---------------------------------");
         retorno.append("\n Vendedor: " + getVendedorResponsavel());
+        retorno.append("\n---------------------------------");
         retorno.append("\n Valor da Venda: " + valorDaVenda);
         retorno.append("\n Data de Registro: " + dataDeRegistro);
+        retorno.append("\n**************************************");
         return retorno.toString();
     }
 }
