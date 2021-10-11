@@ -23,8 +23,8 @@ public class ServicoCliente {
 
     //não permite cadastrar email sem @
     public static void autenticarEmail(String email) throws Exception {
-        if (!email.contains("@")) {
-            throw new Exception("Email inválido, favor digitar um válido!");
+        if (!email.contains("@" + ".com")) {
+            throw new Exception("Email inválido, favor digitar um válido com o @ e .com!");
         }
     }
 
