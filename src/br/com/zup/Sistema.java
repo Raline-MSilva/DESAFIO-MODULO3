@@ -21,7 +21,7 @@ public class Sistema {
         System.out.println("Digite 5 para exibir a lista de vendedores");
         System.out.println("Digite 6 para exibir a lista de vendas");
         System.out.println("Digite 7 para pesquisar compra do cliente pelo CPF");
-        System.out.println("Digite 8 para pesquisar venda do venddor pelo seu email");
+        System.out.println("Digite 8 para pesquisar venda do vendedor pelo seu email");
         System.out.println("Digite 9 para sair do --Você em Divída--");
     }
 
@@ -104,9 +104,11 @@ public class Sistema {
                 System.out.println(pesquisarCompraPorCpf());
             } else if (opcaoDesejada == 8) {
                 System.out.println(pesquisarVendaPoEmail());
-            } else {
+            } else if (opcaoDesejada == 9) {
                 menu = false;
                 System.out.println("Cê saiu do sistema --Vendas Você em Divída--");
+            } else {
+                System.out.println("Digite uma opção que esteja no menu!");
             }
         }
         return menu;
