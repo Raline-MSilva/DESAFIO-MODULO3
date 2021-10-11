@@ -77,6 +77,7 @@ public class Sistema {
         return vendaPorEmail;
     }
 
+    //
     public static boolean Executar() throws Exception {
         boolean menu = true;
 
