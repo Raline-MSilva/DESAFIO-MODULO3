@@ -57,6 +57,7 @@ public class Sistema {
     public static Venda cadastrarVenda() throws Exception {
         String cpf = capturarDados("Informe o cpf do cliente que deseja cadastrar a compra:").nextLine();
         String email = capturarDados("Informe o email do vendedor que deseja realizar a venda:").nextLine();
+        ServicoVendedor.autenticarEmail(email);
         double valorDaVenda = capturarDados("Por favor, informe o valor da compra: ").nextDouble();
         String dataDeRegistro = capturarDados("Informe a data da compra: ").nextLine();
         System.out.println(" ~~Venda cadastrada com sucesso!~~");
