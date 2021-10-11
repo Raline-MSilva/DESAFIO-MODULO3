@@ -6,6 +6,7 @@ import java.util.List;
 public class ServicoCliente {
     private static List<Cliente> clientes = new ArrayList<>();
 
+    //Cadastrar cliente
     public static Cliente cadastrarCliente(String nome, String cpf, String email) {
         Cliente cliente = new Cliente(nome, cpf, email);
         clientes.add(cliente);
@@ -44,10 +45,11 @@ public class ServicoCliente {
             }
         }
     }
+
     //percorre a lista para cadastrar na venda
-    public static Cliente pesquisarClientePorCpf(String cpf) throws Exception{
-        for (Cliente clienteReferencia : clientes){
-            if (clienteReferencia.getCpf().equalsIgnoreCase(cpf)){
+    public static Cliente pesquisarClientePorCpf(String cpf) throws Exception {
+        for (Cliente clienteReferencia : clientes) {
+            if (clienteReferencia.getCpf().equalsIgnoreCase(cpf)) {
                 return clienteReferencia;
             }
         }

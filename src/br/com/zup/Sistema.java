@@ -65,19 +65,21 @@ public class Sistema {
         return ServicoVenda.cadastrarVenda(cpf, email, valorDaVenda, dataDeRegistro);
     }
 
+    //Pesquisar compras do cliente pelo cpf
     public static List<Venda> pesquisarCompraPorCpf() throws Exception {
         String cpf = capturarDados("Digite o CPF do cliente que deseja consultar:").nextLine();
         List<Venda> compraPorCpf = ServicoVenda.pesquisarCompraPorCpf(cpf);
         return compraPorCpf;
     }
 
+    //Pesquisar vendas do vendedor pelo email
     public static List<Venda> pesquisarVendaPoEmail() throws Exception {
         String email = capturarDados("Informe o email do vendedor que deseja consultar: ").nextLine();
         List<Venda> vendaPorEmail = ServicoVenda.pesquisarVendaPorEmail(email);
         return vendaPorEmail;
     }
 
-    //
+    // Executar opções do menu
     public static boolean Executar() throws Exception {
         boolean menu = true;
 

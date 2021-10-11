@@ -6,7 +6,7 @@ import java.util.List;
 public class ServicoVenda {
     private static List<Venda> vendas = new ArrayList<>();
 
-
+    //Cadastrar Venda
     public static Venda cadastrarVenda(String cpf, String email, double valorDaVenda, String dataDeRegistro) throws Exception {
         Cliente cliente = ServicoCliente.pesquisarClientePorCpf(cpf);
         Vendedor vendedor = ServicoVendedor.pesquisarVendedorPorEmail(email);
