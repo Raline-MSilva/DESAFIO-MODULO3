@@ -30,9 +30,10 @@ public class ServicoVenda {
         for (Venda clienteCompra : vendas) {
             if (clienteCompra.getCliente().getCpf().equals(cpf)) {
                 listaDeCompra.add(clienteCompra);
+                return listaDeCompra;
             }
         }
-        return listaDeCompra;
+        throw new Exception("CPF nao encontrado no sistema");
     }
 
     //pesquisar as vendas do vendedor pelo seu email
@@ -41,8 +42,9 @@ public class ServicoVenda {
         for (Venda vendedor : vendas) {
             if (vendedor.getVendedorResponsavel().getEmail().equals(email)) {
                 listaDevenda.add(vendedor);
+                return listaDevenda;
             }
         }
-        return listaDevenda;
+        throw new Exception("Email nao encontrado no sistema");
     }
 }
